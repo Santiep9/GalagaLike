@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 
 {
     public GameObject orcPrefab;
-    public int maxOrc = 5;
+    public int maxOrc = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

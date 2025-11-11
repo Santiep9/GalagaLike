@@ -9,7 +9,7 @@ public class OrcScript : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
 
-        transform.position = new Vector2(Random.Range(-7.0f,7.0f), 6.5f);
+        transform.position = new Vector2(Random.Range(-3.0f,3.0f), 5f);
     }
 
     // Update is called once per frame
