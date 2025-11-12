@@ -2,23 +2,16 @@ using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-
 {
     public GameObject orcPrefab;
-    public int maxOrc = 2;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int maxEnemy = 2;
+
     void Start()
     {
-        for (int i=0; i < maxOrc; i++)
+        for (int i=0; i < maxEnemy; i++)
         {
-            GameObject orc =Instantiate(orcPrefab);
-            orc.name = "Orco_" + i;
+            GameObject enemy =Instantiate(orcPrefab);
+            enemy.name = "Enemy_" + i;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
