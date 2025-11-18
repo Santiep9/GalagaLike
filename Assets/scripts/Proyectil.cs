@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class Proyectil : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f); // Autodestruye si no colisiona antes
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Enemigo")
+        // Si toca el "Limite", destruye el proyectil que si no hace instakill a los bichos
+        if (other.CompareTag("Limite"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
+
     }
 }

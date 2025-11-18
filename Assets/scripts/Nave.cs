@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Nave : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2D;
-    public float MovementSpeed = 10.00f;
-
+    public float MovementSpeed = 10.0f;
     public GameObject proyectilPrefab;
-    public Transform inicioTrayectoria;
-    public float proyectilVel = 10.00f;
+    public Transform[] firePoints;
+    public float proyectilVel = 10.0f;
+
+    private Rigidbody2D rigidbody2D;
 
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();  
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -22,22 +22,23 @@ public class Nave : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        //valor entre -1 y 1 (Left Right)
-        float movement= Input.GetAxis("Horizontal");
-
-        rigidbody2D.linearVelocity= Vector2.right * movement * MovementSpeed;
+        float movement = Input.GetAxis("Horizontal");
+        rigidbody2D.velocity = Vector2.right * movement * MovementSpeed;
     }
 
     void Disparo()
     {
-        GameObject proyectil = Instantiate(proyectilPrefab, inicioTrayectoria.transform.position, inicioTrayectoria.transform.rotation);
-
-        Rigidbody2D rb = proyectil.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        foreach (Transform firePoint in firePoints)
         {
-            rb.linearVelocity = inicioTrayectoria.up * proyectilVel;
+            if (proyectilPrefab != null && firePoint != null)
+            {
+                GameObject proyectil = Instantiate(proyectilPrefab, firePoint.position, Quaternion.identity);
+                Rigidbody2D rb = proyectil.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                    rb.velocity = Vector2.up * proyectilVel;
+            }
         }
     }
 }

@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6362832775884612094, guid: 5fce13d2e4d2748c59acc8c642e4c9dd, type: 3}
+  m_Sprite: {fileID: 3310002292416464744, guid: 8978784703d141240a386602d9b428c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,9 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ab2a7c7fa0b5843b8b0626f2c7bc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrcScript
-  MovementSpeed: 0.5
-  gameOver: {fileID: 0}
-  contador: {fileID: 0}
+  velocidad: 1
 --- !u!61 &5981317730697453265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,7 +163,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -173,7 +171,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61, y: 0.57}
+    oldSize: {x: 10, y: 10.5625}
     newSize: {x: 0.61, y: 0.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
